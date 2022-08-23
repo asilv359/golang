@@ -91,7 +91,7 @@ func handleReq(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 
-	http.HandleFunc("/tracer", handleReq)
+	http.HandleFunc("/", handleReq)
 
 	http.ListenAndServe("127.0.0.1:8181", nil)
 }
