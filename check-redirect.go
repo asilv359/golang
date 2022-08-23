@@ -14,30 +14,16 @@ type RedirectResponse struct {
 	Server   string `json:server`
 }
 
-// type RedirectResponse struct {
-// 	Status   string         `json:status`
-// 	Response map[string]int `json:response`
-// 	Location string         `json:location`
-// 	Server   string         `json:server`
-// }
-
-// type Redirect struct {
-// 	Url  string `json:status`
-// 	Code string `json:status`
-// }
-
 func handleReq(w http.ResponseWriter, req *http.Request) {
 
 	var server string
-	// var location string
 
 	site := req.URL.Query().Get("site")
 
 	redirects := make(map[string]int)
 
 	nextUrl := site
-	// var i int
-	// for i < 20
+
 	for i := 0; i < 20; {
 
 		client := &http.Client{
@@ -58,8 +44,6 @@ func handleReq(w http.ResponseWriter, req *http.Request) {
 
 			server = ("Can not get server name")
 		}
-
-		// location = resp.Header.Get("Location")
 
 		status := http.StatusText(resp.StatusCode)
 
@@ -99,9 +83,6 @@ func handleReq(w http.ResponseWriter, req *http.Request) {
 
 	}
 
-	// json_data, _ := json.Marshal(redirects)
-	// w.Write(json_data)
-
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	w.Header().Set("Content-Type", "application/json")
@@ -114,5 +95,3 @@ func main() {
 
 	http.ListenAndServe("127.0.0.1:8181", nil)
 }
-
-// TODO: each redirect its json object
