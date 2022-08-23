@@ -1,3 +1,4 @@
+<h1>Check Your Redirects and Statuscode</h1>
 <h2>Redirect HTTP tracing</h2>
 This tool illustrates the path of where a link actually leads and which servers are accessed before you get to the page you thought you originally had requested.
 
