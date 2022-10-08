@@ -24,4 +24,4 @@ The numbers that show up in the coloured boxes are the HTTP status codes that te
 <li>500 - Internal Server Error</li>
 </ul>
 example 
-http://localhost:8181/?site=https://www.startsc.com.br/
+http://localhost:8181/tracer?site=https://www.startsc.com.br/
